@@ -2,100 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lecture 19</title>
+    <title>Lecture 20</title>
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-<!--<main class="container">-->
-
-<!--    <p id="clock"></p>-->
-
-<!--    <div class="slider-wrapper">-->
-<!--        <div class="slider-item active">-->
-<!--            <img src="https://picsum.photos/1200/400?random=1" />-->
-<!--            <div class="caption">-->
-<!--                <h2>Caption 1 heading</h2>-->
-<!--                <p>Caption 1 desc</p>-->
-<!--            </div>-->
+<!--<button id="open-modal" type="button">Open modal</button>-->
+<!--<div class="modal my-modal">-->
+<!--    <div class="modal-content">-->
+<!--        <div class="modal-header">-->
+<!--            User registration form-->
+<!--            <button class="modal-close">X</button>-->
 <!--        </div>-->
-<!--        <div class="slider-item">-->
-<!--            <img src="https://picsum.photos/1200/400?random=2"/>-->
-<!--            <div class="caption">-->
-<!--                <h2>Caption 2 heading</h2>-->
-<!--                <p>Caption 2 desc</p>-->
-<!--            </div>-->
+<!--        <div class="modal-body">-->
+<!--            <form id="user-login-form" method="post" action="/" novalidate>-->
+<!--                <div class="form-field">-->
+<!--                    <label>-->
+<!--                        <input name="email" type="email" placeholder="Enter Email">-->
+<!--                        <p class="error-message"></p>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-field">-->
+<!--                    <label>-->
+<!--                        <input name="password" type="password" placeholder="Enter Password">-->
+<!--                        <p class="error-message"></p>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-field">-->
+<!--                    <label>-->
+<!--                        <input name="personal_number" type="text" placeholder="Enter Personal Number">-->
+<!--                        <p class="error-message"></p>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-field">-->
+<!--                    <label>-->
+<!--                        <input name="mobile_number" type="text" placeholder="Enter Mobile Number">-->
+<!--                        <p class="error-message"></p>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <div class="form-field">-->
+<!--                    <label>-->
+<!--                        <input name="position" type="text" placeholder="Enter Position">-->
+<!--                        <p class="error-message"></p>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--                <button type="submit">Register</button>-->
+<!--            </form>-->
 <!--        </div>-->
-<!--        <div class="slider-item">-->
-<!--            <img src="https://picsum.photos/1200/400?random=3" />-->
-<!--            <div class="caption">-->
-<!--                <h2>Caption 3 heading</h2>-->
-<!--                <p>Caption 3 desc</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="slider-item">-->
-<!--            <img src="https://picsum.photos/1200/400?random=3" />-->
-<!--            <div class="caption">-->
-<!--                <h2>Caption 4 heading</h2>-->
-<!--                <p>Caption 4 desc</p>-->
-<!--            </div>-->
-<!--        </div>-->
 <!--    </div>-->
-<!--    <div class="slider-btns">-->
-<!--        <button id="prev-slide-btn"><<</button>-->
-<!--        <button id="next-slide-btn">>></button>-->
-<!--    </div>-->
+<!--</div>-->
 
-
-<!--    <div class="balls">-->
-<!--        <button class="ball"></button>-->
-<!--        <button class="ball"></button>-->
-<!--        <button class="ball"></button>-->
-<!--        <button class="ball"></button>-->
-<!--    </div>-->
-
-<!--    <div class="slider-buttons">-->
-<!--        <button id="start-slide-btn"> startAutoSliding</button>-->
-<!--        <button id="stop-slide-btn">stopAutoSliding</button>-->
-<!--    </div>-->
-<!--</main>-->
-<!--<form id="user-login-form" method="post" action="/" novalidate>-->
-<!--   <div class="form-field">-->
-<!--       <label>-->
-<!--           <input name="email" type="email" placeholder="Enter Email">-->
-<!--           <p class="error-message"></p>-->
-<!--       </label>-->
-<!--   </div>-->
-<!--    <div class="form-field">-->
-<!--        <label>-->
-<!--            <input name="password" type="password" placeholder="Enter Password">-->
-<!--            <p class="error-message"></p>-->
-<!--        </label>-->
-<!--    </div>-->
-<!--    <button type="submit">Login</button>-->
-<!--</form>-->
-<button id="open-modal" type="button">Open modal</button>
-<div class="modal my-modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            This is modal title
-            <button class="modal-close">X</button>
-        </div>
-        <div class="modal-body">
-            This is modal body
-        </div>
+<form id="user-signup-form" action="/save-user" method="post" novalidate>
+    <input id="user_id" type="hidden" placeholder="">
+    <div class="form-field">
+        <label for="first_name">Enter First Name</label>
+        <input id="first_name" type="text" placeholder="First Name" required minlength="4">
+        <span class="field-error" id="first_name-error"></span>
     </div>
-</div>
-<div class="modal my-modal-2">
-    <div class="modal-content">
-        <div class="modal-header">
-            This is modal title
-            <button class="modal-close">X</button>
-        </div>
-        <div class="modal-body">
-            This is modal body
-        </div>
+    <div class="form-field">
+        <label for="last_name">Enter Last name</label>
+        <input id="last_name" type="text" placeholder="Last name" required>
+        <span class="field-error" id="last_name-error"></span>
     </div>
-</div>
+    <div class="form-field">
+        <label for="zip">Enter Zip</label>
+        <input id="zip" type="text" placeholder="Zip" required>
+        <span class="field-error" id="zip-error"></span>
+    </div>
+    <div class="form-field">
+        <label for="personal_number">personal_number</label>
+        <input id="personal_number" type="number" placeholder="personal_number" required>
+        <span class="field-error" id="personal_number-error"></span>
+    </div>
+    <div class="form-field">
+        <label for="mobile_number">mobile_number</label>
+        <input id="mobile_number" type="number" placeholder="mobile_number" required>
+        <span class="field-error" id="mobile_number-error"></span>
+    </div>
+    <div class="form-field">
+        <label for="gender">Enter gender</label>
+        <input id="gender" type="text" placeholder="gender" required>
+        <span class="field-error" id="gender-error"></span>
+    </div>
+    <div class="form-field">
+        <label for="email">Enter Email</label>
+        <input id="email" type="email" placeholder="email" required>
+        <span class="field-error" id="email-error"></span>
+    </div>
+    <div class="form-field">
+        <label for="status">Enter status</label>
+        <input id="status" type="text" placeholder="status" required>
+        <span class="field-error" id="status-error"></span>
+    </div>
+    <div class="form-field">
+        <label for="position">position</label>
+        <input id="position" type="text" placeholder="position" maxlength="30">
+        <span class="field-error" id="position-error"></span>
+    </div>
+
+    <button type="submit">Save</button>
+</form>
 <script src="app.js"></script>
 </body>
 </html>
